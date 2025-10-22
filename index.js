@@ -6,9 +6,36 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.send("This is the About page.");
+  res.status(200).json(
+    [
+        {
+         "Name": "Anakin",
+         "Gender": "male", 
+         "Homeworld": "Tatooine",
+         "Born": "41.9BBY",
+         "Jedi": "yes"
+        },
+        {
+         "Name": "Amidala",
+         "Gender": "female", 
+         "Homeworld": "Naboo",
+         "Born": "46BBY",
+         "Jedi": "no"
+        },
+      
+        {
+         "Name": "R2-D2",
+         "Gender": "unknown",
+         "Homeworld": "Naboo",
+         "Born": "33BBY",
+         "Jedi": "no"
+        }
+    ]
+  )
 });
 
 
 
-module.exports = app; // 
+app.listen(3000, ()=>console.log("server is running on port 3000"))
+
+// module.exports = app; // 
